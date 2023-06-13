@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<HTML>
+	<!-- 주석 -->
+	<HEAD>
+		<META charset="UTF-8">
+		<TITLE>채팅</TITLE>
+		<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+		<SCRIPT>
+			$( function() {
+				$("#inputTextButton").click( function() {
+					var inputText = $("#inputTextBox").val();
+					if(inputText != "") {
+						$("#contetsbox").append("<div id='detailtext'>" + inputText + "<img id='deletebutton' class='xbutton' src='x.png'></div>");
+						$("#deletebutton").click( function() {
+							$("#detailtext").remove();
+						});
+					}
+				});
+			});
+		</SCRIPT>
+		<STYLE>
+			.xbutton {
+				width: 30px;
+				height: 30px;
+			}
+		</STYLE>		
+	</HEAD>
+	<BODY>
+		<div id="mainframe">
+			<div id="titlebox">기사 등록하기</div>
+			<div id="contetsbox"></div>
+		</div>
+		<div id="inputbox">
+			<input type="text" id="inputTextBox">
+			<input type="button" id="inputTextButton" value="입력">
+		</div>
+	</BODY>
+</HTML>
